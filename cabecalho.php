@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Minha Loja</title>
+    <title>Primeiro projeto</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/loja.css" rel="stylesheet">
 </head>
@@ -14,7 +14,7 @@
             <div>
                 <ul class="nav navbar-nav">
                     <li><a href="formularioResidencia.php">Cadastro de Casa</a></li>
-                    <li><a href="">Casas Cadastradas</a></li>
+                    <li><a href="listaDeResidencia.php">Casas Cadastradas</a></li>
                     
                 </ul>
             </div>
