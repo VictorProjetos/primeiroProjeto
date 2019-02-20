@@ -1,6 +1,4 @@
 <?php include("cabecalho.php");
-include("conexao.php");
-include("cadastraResidencia.php");
 
 ?>
 
