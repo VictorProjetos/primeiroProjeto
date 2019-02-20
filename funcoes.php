@@ -6,3 +6,17 @@ function cadastraResidencia($conexao, $residenciaDescricao, $residenciaNumero, $
     VALUES (\"$residenciaDescricao\", \"$residenciaNumero\",\"$residenciaComodos\")";
     return mysqli_query($conexao, $query);
 }
+
+//LISTA RESIDENCIAS
+
+function listaResidencia($conexao){
+    $listaResidencia = array();
+    $query = "SELECT * FROM residencias";
+    $resultado = mysqli_query($conexao, $query);
+
+    while($residencia = mysqli_fetch_assoc($resultado)){
+        array_push($listaResidencia, $residencia);
+    }
+    
+   
+}
