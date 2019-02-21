@@ -20,8 +20,8 @@ function listaResidencia($conexao){
 }
 
 // DELETA RESIDENCIAS
-function deletaResidencia($conexao){
-    $query = "DELETE FROM residencias where id = {'$id'}";
+function deletaResidencia($conexao, $id){
+    $query = "DELETE FROM residencias where id = {$id}";
     $resultado = mysqli_query($conexao, $query);
     return $resultado;
 }
@@ -29,8 +29,7 @@ function deletaResidencia($conexao){
 // VALIDA OS CAMPOS DO FORMULARIO DE CADASTRO PARA RESIDENCIA
 function validaCamposFormularioResidencia($residenciaDescricao,$residenciaNumero,$residenciaComodos){
     if ($residenciaDescricao == null || $residenciaNumero == null || $residenciaComodos == null){
-        echo "Falta informação";
-        header("Location: formularioResidencia.php");
+        header("Location: formularioResidencia.php?invalido=true");
         die();
     }
 }

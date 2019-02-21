@@ -9,6 +9,7 @@ include("funcoes.php");
             <th scope="col">Descrição da Residencia</th>
             <th scope="col">Numero da Residencia</th>
             <th scope="col">Quantidade de Comodos</th>
+            <th scope="col">Remover</th>
         </tr>
     </thead>
     <?php
@@ -19,6 +20,10 @@ include("funcoes.php");
         <td><?= $residencia['residencia_descricao']?></td>
         <td><?= $residencia['residencia_numero']?></td>
         <td><?= $residencia['residencia_comodos']?></td>
+        <form action="deletaResidencia.php" method="POST">
+            <input type="hidden" name="id" value="<?=$residencia['id']?>">
+            <td><button class="btn btn-danger">Remover</button></td>
+        </form>
     </tr>
     <?php
         endforeach

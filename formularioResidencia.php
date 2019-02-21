@@ -3,6 +3,7 @@
 ?>
 
 <h1>Cadastro de Residencia</h1>
+
 <form action="cadastraResidencia.php" method="POST">
     <table class="table">
         <tr>
