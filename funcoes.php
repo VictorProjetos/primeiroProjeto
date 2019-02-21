@@ -33,3 +33,11 @@ function validaCamposFormularioResidencia($residenciaDescricao,$residenciaNumero
         die();
     }
 }
+
+function editaResidencia($conexao, $residenciaDescricao, $residenciaNumero, $residenciaComodos, $id){
+    $query = "UPDATE residencias SET residencia_descricao = {$residenciaDescricao},
+    residencia_numero = {$residenciaNumero},
+    residencia_comodos =  '{$residenciaComodos} Comodos' where = {$id}";
+    $resultado = mysqli_query($conexao, $query);
+    return $resultado;
+}

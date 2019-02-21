@@ -10,6 +10,7 @@ include("funcoes.php");
             <th scope="col">Numero da Residencia</th>
             <th scope="col">Quantidade de Comodos</th>
             <th scope="col">Remover</th>
+            <th scope="col">Editar</th>
         </tr>
     </thead>
     <?php
@@ -24,6 +25,7 @@ include("funcoes.php");
             <input type="hidden" name="id" value="<?=$residencia['id']?>">
             <td><button class="btn btn-danger">Remover</button></td>
         </form>
+        <td><button class="btn btn-info">Editar</button></td>
     </tr>
     <?php
         endforeach
