@@ -16,7 +16,7 @@
         </tr>
         <tr>
             <td>Comodos:</td>
-            <td><input class="form-control" type="number" name="residenciaComodos"></td>
+            <td><input class="form-control" type="text" name="residenciaComodos"></td>
         </tr>
         <tr>
             <td><button class="btn btn-primary" type="submit">Cadastrar</button></td>

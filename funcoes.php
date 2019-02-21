@@ -36,12 +36,10 @@ function validaCamposFormularioResidencia($residenciaDescricao,$residenciaNumero
 
 // EDITA RESIDENCIA NO BANCO
 function editaResidencia($conexao, $residenciaDescricao, $residenciaNumero, $residenciaComodos, $id){
-    
-    $query = "UPDATE residencias SET residencia_descricao = {$residenciaDescricao},
+    $query = "UPDATE residencias SET residencia_descricao = '{$residenciaDescricao}',
     residencia_numero = {$residenciaNumero},
-    residencia_comodos =  '{$residenciaComodos} Comodos' where = {$id}";
+    residencia_comodos =  '{$residenciaComodos} Comodos' where id = {$id}";
     $resultado = mysqli_query($conexao, $query);
-    return $resultado;
 }
 
 // BUSCA RESIDENCIA NO BANCO

@@ -4,8 +4,7 @@ include("conexao.php");
 include("funcoes.php");
 
 $id = $_POST['id'];
-
-print_r(buscaResidencia($conexao, $id));
+$residencia = buscaResidencia($conexao, $id);
 
 ?>
 
@@ -15,18 +14,21 @@ print_r(buscaResidencia($conexao, $id));
     <table class="table">
         <tr>
             <td>Descrição da Residencia</td>
-            <td><input class="form-control" type="text" name="residenciaDescricao"></td>
+            <td><input class="form-control" type="text" name="residenciaDescricao" value="<?=$residencia['residencia_descricao']?>"></td>
         </tr>
         <tr>
             <td>Numero da Residencia:</td>
-            <td><input class="form-control" type="number" name="residenciaNumero"></td>
+            <td><input class="form-control" type="number" name="residenciaNumero" value="<?=$residencia['residencia_numero']?>"></td>
         </tr>
         <tr>
             <td>Comodos:</td>
-            <td><input class="form-control" type="number" name="residenciaComodos"></td>
+            <td><input class="form-control" type="text" name="residenciaComodos" value="<?=$residencia['residencia_comodos']?>"></td>
         </tr>
         <tr>
-            <td><button class="btn btn-primary" type="submit">Cadastrar</button></td>
+            <td><button class="btn btn-primary" type="submit">Editar</button></td>
+        </tr>
+        <tr>
+            <input type="hidden" name="id" value="<?=$residencia['id']?>">
         </tr>
     </table>
     
