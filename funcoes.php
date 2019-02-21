@@ -34,10 +34,20 @@ function validaCamposFormularioResidencia($residenciaDescricao,$residenciaNumero
     }
 }
 
+// EDITA RESIDENCIA NO BANCO
 function editaResidencia($conexao, $residenciaDescricao, $residenciaNumero, $residenciaComodos, $id){
+    
     $query = "UPDATE residencias SET residencia_descricao = {$residenciaDescricao},
     residencia_numero = {$residenciaNumero},
     residencia_comodos =  '{$residenciaComodos} Comodos' where = {$id}";
     $resultado = mysqli_query($conexao, $query);
     return $resultado;
+}
+
+// BUSCA RESIDENCIA NO BANCO
+function buscaResidencia($conexao, $id){
+    $query = "SELECT * FROM residencias WHERE id = '$id'";
+    $resultado = mysqli_query($conexao, $query);
+    $residencias = mysqli_fetch_assoc($resultado);
+    return $residencias;
 }

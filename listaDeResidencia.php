@@ -25,7 +25,10 @@ include("funcoes.php");
             <input type="hidden" name="id" value="<?=$residencia['id']?>">
             <td><button class="btn btn-danger">Remover</button></td>
         </form>
-        <td><button class="btn btn-info">Editar</button></td>
+        <form action="formularioEditaResidencia.php" method="POST">
+            <input type="hidden" name="id" value="<?=$residencia['id']?>">
+            <td><button class="btn btn-info">Editar</button></td>
+        </form>
     </tr>
     <?php
         endforeach
