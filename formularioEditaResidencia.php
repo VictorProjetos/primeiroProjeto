@@ -10,7 +10,7 @@ $residencia = buscaResidencia($conexao, $id);
 
 <h1>Editar Residencia</h1>
 
-<form action="editaResidencia.php" method="POST">
+<form action="editaResidencia.php" method="POST">   
     <table class="table">
         <tr>
             <td>Descrição da Residencia</td>
@@ -18,11 +18,11 @@ $residencia = buscaResidencia($conexao, $id);
         </tr>
         <tr>
             <td>Numero da Residencia:</td>
-            <td><input class="form-control" type="number" name="residenciaNumero" value="<?=$residencia['residencia_numero']?>"></td>
+            <td><input class="form-control" type="text" name="residenciaNumero" value="<?=$residencia['residencia_numero']?>"></td>
         </tr>
         <tr>
             <td>Comodos:</td>
-            <td><input class="form-control" type="text" name="residenciaComodos" value="<?=$residencia['residencia_comodos']?>"></td>
+            <td><input class="form-control" type="number" name="residenciaComodos" value="<?=$residencia['residencia_comodos']?>"></td>
         </tr>
         <tr>
             <td><button class="btn btn-primary" type="submit">Editar</button></td>

@@ -3,7 +3,7 @@
 //CADASTRA RESIDENCIAS
 function cadastraResidencia($conexao, $residenciaDescricao, $residenciaNumero, $residenciaComodos){
     $query = "INSERT INTO residencias (residencia_descricao, residencia_numero, residencia_comodos)
-    VALUES ('{$residenciaDescricao}', {$residenciaNumero}, '{$residenciaComodos} Comodos')";
+    VALUES ('{$residenciaDescricao}', '{$residenciaNumero}', '{$residenciaComodos}')";
     return mysqli_query($conexao, $query);
 }
 
@@ -37,8 +37,8 @@ function validaCamposFormularioResidencia($residenciaDescricao,$residenciaNumero
 // EDITA RESIDENCIA NO BANCO
 function editaResidencia($conexao, $residenciaDescricao, $residenciaNumero, $residenciaComodos, $id){
     $query = "UPDATE residencias SET residencia_descricao = '{$residenciaDescricao}',
-    residencia_numero = {$residenciaNumero},
-    residencia_comodos =  '{$residenciaComodos} Comodos' where id = {$id}";
+    residencia_numero = '{$residenciaNumero}',
+    residencia_comodos =  '{$residenciaComodos}' where id = {$id}";
     $resultado = mysqli_query($conexao, $query);
 }
 
