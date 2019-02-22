@@ -5,21 +5,22 @@
 <h1>Cadastro de Residencia</h1>
 
 <form action="cadastraResidencia.php" method="POST">
-    <div class="fomr-row">
-        <div class="form-group">
-            <label for="residenciaDescricao">Descrição da Residencia</label>
-            <input class="form-control" type="text" name="residenciaDescricao">
-        </div>
-        <div class="form-group col-md-6">
-            <label>Numero da Residencia:</label>
-            <input class="form-control" type="text" maxlength="5" name="residenciaNumero"></td>
-        </div>
-        <div class="form-group col-md-6">
-            <label>Comodos:</label>
-            <input class="form-control" type="number" name="residenciaComodos">
-        </div>
+    <table class="table">
+        <tr>
+            <td>Descrição da Residencia</td>
+            <td><input class="form-control" type="text" name="residenciaDescricao"></td>
+        </tr>
+        <tr>
+            <td>Numero da Residencia:</td>
+            <td><input class="form-control" type="number" name="residenciaNumero"></td>
+        </tr>
+        <tr>
+            <td>Comodos:</td>
+            <td><input class="form-control" type="text" name="residenciaComodos"></td>
+        </tr>
         <tr>
             <td><button class="btn btn-primary" type="submit">Cadastrar</button></td>
         </tr>
-    </div> 
+    </table>
+    
 </form>
