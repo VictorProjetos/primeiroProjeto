@@ -49,3 +49,11 @@ function buscaResidencia($conexao, $id){
     $residencias = mysqli_fetch_assoc($resultado);
     return $residencias;
 }
+
+function buscaUsuario($conexao, $email, $senha){
+    $senhaMd5 = md5($senha);
+    $query = "SELECT * FROM usuarios WHERE email='{$email}' AND senha='{$senhaMd5}'";
+    $resultado = mysqli_query($conexao, $query);
+    $usuarios = mysqli_fetch_assoc($resultado);
+    return $usuarios;   
+}
