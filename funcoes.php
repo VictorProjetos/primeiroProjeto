@@ -58,27 +58,3 @@ function buscaUsuario($conexao, $email, $senha){
     $usuarios = mysqli_fetch_assoc($resultado);
     return $usuarios;   
 }
-
-// INICIA COOKIE DO USUARIO
-function logaUsuario($usuario){
-    setcookie("usuario_logado", $usuario, time() + 10);
-}
-
-// MOSTRA O USUARIO LOGADO
-function usuarioLogado(){
-    return $_COOKIE["usuario_logado"];
-}
-
-// VERIFICA O USUARIO LOGADO
-
-function usuarioEstaLogado(){
-    return isset($_COOKIE["usuario_logado"]);
-}
-
-// VERIFICA SE O USUARIO ESTA LOGADO
-function verificaUsuario(){
-    if(!usuarioLogado()){
-        header("Location: index.php?semUsuario=true");
-        die();
-    }
-}

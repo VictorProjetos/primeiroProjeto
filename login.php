@@ -1,6 +1,8 @@
 <?php 
 include("conexao.php");
+include("funcoesDeUsuario.php");
 include("funcoes.php");
+
 
 $usuario = buscaUsuario($conexao, $_POST["email"], $_POST["senha"]);
 if ($usuario == NULL){

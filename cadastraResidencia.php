@@ -1,6 +1,7 @@
 <?php include("cabecalho.php");
 include("conexao.php");
 include("funcoes.php");
+include("funcoesDeUsuario.php");
 verificaUsuario();
 $residenciaDescricao = $_POST["residenciaDescricao"];
 $residenciaNumero = $_POST["residenciaNumero"];
