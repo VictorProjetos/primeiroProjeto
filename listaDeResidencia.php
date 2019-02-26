@@ -1,6 +1,8 @@
 <?php include("cabecalho.php");
 include("conexao.php");
 include("funcoes.php");
+
+verificaUsuario();
 ?>
 
 <table class="table table-striped table-bordered">

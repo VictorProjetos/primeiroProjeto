@@ -3,6 +3,7 @@ include("cabecalho.php");
 include("conexao.php");
 include("funcoes.php");
 
+verificaUsuario();
 $id = $_POST['id'];
 $residencia = buscaResidencia($conexao, $id);
 

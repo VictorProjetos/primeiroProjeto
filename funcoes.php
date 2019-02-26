@@ -50,10 +50,35 @@ function buscaResidencia($conexao, $id){
     return $residencias;
 }
 
+// BUSCA USUARIO NO BANCO
 function buscaUsuario($conexao, $email, $senha){
     $senhaMd5 = md5($senha);
     $query = "SELECT * FROM usuarios WHERE email='{$email}' AND senha='{$senhaMd5}'";
     $resultado = mysqli_query($conexao, $query);
     $usuarios = mysqli_fetch_assoc($resultado);
     return $usuarios;   
+}
+
+// INICIA COOKIE DO USUARIO
+function logaUsuario($usuario){
+    setcookie("usuario_logado", $usuario, time() + 10);
+}
+
+// MOSTRA O USUARIO LOGADO
+function usuarioLogado(){
+    return $_COOKIE["usuario_logado"];
+}
+
+// VERIFICA O USUARIO LOGADO
+
+function usuarioEstaLogado(){
+    return isset($_COOKIE["usuario_logado"]);
+}
+
+// VERIFICA SE O USUARIO ESTA LOGADO
+function verificaUsuario(){
+    if(!usuarioLogado()){
+        header("Location: index.php?semUsuario=true");
+        die();
+    }
 }

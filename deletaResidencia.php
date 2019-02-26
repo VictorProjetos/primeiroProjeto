@@ -2,6 +2,7 @@
 include("conexao.php");
 include("funcoes.php");
 
+verificaUsuario();
 $id = $_POST['id'];
 
 deletaResidencia($conexao, $id);

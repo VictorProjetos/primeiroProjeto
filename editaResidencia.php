@@ -2,6 +2,7 @@
 include("conexao.php");
 include("funcoes.php");
 
+verificaUsuario();
 $residenciaDescricao = $_POST["residenciaDescricao"];
 $residenciaNumero = $_POST["residenciaNumero"];
 $residenciaComodos = $_POST["residenciaComodos"];

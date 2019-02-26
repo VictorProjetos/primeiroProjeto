@@ -1,5 +1,7 @@
 <?php include("cabecalho.php");
+include("funcoes.php");
 
+verificaUsuario();
 ?>
 
 <h1>Cadastro de Residencia</h1>

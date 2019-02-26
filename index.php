@@ -1,13 +1,27 @@
 <?php include("cabecalho.php");
+include("funcoes.php");
 
 if(isset($_GET["logado"]) && $_GET["logado"]==true){ ?>
     <p class="alert-success">Logado com sucesso !</p>
 <?php }
 if (isset($_GET["logado"]) && $_GET["logado"]==false){ ?>
     <p class="alert-danger">Usuario ou senha invalido !</p>
-<?php } ?> 
+<?php }
+if (isset($_GET["semUsuario"]) && $_GET["semUsuario"] ==true){ ?>
+    <p class="alert-danger">Você perdeu sua sessão</p>
+<?php
+}
+?>
+ 
 <h1>Bem Vindo !</h1>
-
+<?php
+if (usuarioEstaLogado()){
+?>
+    <p class="text-success">Você está logado como <?=usuarioLogado()?></p>
+<?php
+}
+else{
+?>
 <form action="login.php" method="POST">
     <table class="table">
         <tr>
@@ -23,4 +37,6 @@ if (isset($_GET["logado"]) && $_GET["logado"]==false){ ?>
         </tr>        
     </table>
 </form>
-<?php include("rodape.php")?>
+<?php
+}
+include("rodape.php")?>
