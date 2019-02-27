@@ -20,11 +20,13 @@ function usuarioEstaLogado(){
 // VERIFICA SE O USUARIO ESTA LOGADO
 function verificaUsuario(){
     if(!usuarioLogado()){
-        header("Location: index.php?semUsuario=true");
+        $_SESSION["danger"] = "Você não esta logado.";
+        header("Location: index.php");
         die();
     }
 }
 
 function logout(){
     session_destroy();
+    session_start();
 }

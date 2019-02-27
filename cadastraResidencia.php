@@ -3,6 +3,12 @@ include("conexao.php");
 include("funcoes.php");
 include("funcoesDeUsuario.php");
 verificaUsuario();
+if(isset($_SESSION["success"])){ ?>
+    <p class="alert-success"><?=$_SESSION["success"]?></p>
+<?php 
+    unset($_SESSION["success"]);    
+}
+
 $residenciaDescricao = $_POST["residenciaDescricao"];
 $residenciaNumero = $_POST["residenciaNumero"];
 $residenciaComodos = $_POST["residenciaComodos"];

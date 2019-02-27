@@ -2,28 +2,23 @@
 include("funcoes.php");
 include("funcoesDeUsuario.php");
 
+if(isset($_SESSION["success"])){ ?>
+    <p class="alert-success"><?=$_SESSION["success"]?></p>
+<?php 
+    unset($_SESSION["success"]);    
+}
 
-if(isset($_GET["logado"]) && $_GET["logado"]==true){ ?>
-    <p class="alert-success">Logado com sucesso !</p>
-<?php }
-if (isset($_GET["logado"]) && $_GET["logado"]==false){ ?>
-    <p class="alert-danger">Usuario ou senha invalido !</p>
-<?php }
-if (isset($_GET["semUsuario"]) && $_GET["semUsuario"] ==true){ ?>
-    <p class="alert-danger">Você não está logado !</p>
+if(isset($_SESSION["danger"])){ ?>
+    <p class="alert-danger"><?=$_SESSION["danger"]?></p>
 <?php
-}
-if (isset($_GET["logout"]) && $_GET["logout"] ==true){ ?>
-    <p class="alert-danger">Deslogado Com Sucesso !</p>
-<?php
-}
-?>
+    unset($_SESSION["danger"]);
+} ?>
  
 <h1>Bem Vindo !</h1>
 <?php
 if (usuarioEstaLogado()){
 ?>
-    <p class="text-success">Você está logado como <?=usuarioLogado()?></p>
+    <p class="text-success">Você está logado como <?=usuarioLogado()?> !<a href="logout.php"> Sair</a></p>
 <?php
 }
 else{

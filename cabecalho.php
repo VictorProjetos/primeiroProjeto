@@ -15,6 +15,8 @@
                 <ul class="nav navbar-nav">
                     <li><a href="formularioResidencia.php">Cadastro de Casa</a></li>
                     <li><a href="listaDeResidencia.php">Casas Cadastradas</a></li>
+                    <li><a href="formularioMoradores.php">Cadastro de Moradores</a>
+                    <li><A href="listaDeMoradores.php">Moradores Cadastrados</a>
                     
                 </ul>
             </div>

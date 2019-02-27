@@ -36,9 +36,14 @@ function validaCamposFormularioResidencia($residenciaDescricao,$residenciaNumero
 
 // EDITA RESIDENCIA NO BANCO
 function editaResidencia($conexao, $residenciaDescricao, $residenciaNumero, $residenciaComodos, $id){
-    $query = "UPDATE residencias SET residencia_descricao = '{$residenciaDescricao}',
-    residencia_numero = '{$residenciaNumero}',
-    residencia_comodos =  '{$residenciaComodos}' where id = {$id}";
+    $query = "UPDATE 
+                residencias 
+            SET 
+                residencia_descricao = '{$residenciaDescricao}',
+                residencia_numero = '{$residenciaNumero}',
+                residencia_comodos =  '{$residenciaComodos}' 
+            WHERE id = {$id}";
+            
     $resultado = mysqli_query($conexao, $query);
 }
 
@@ -57,4 +62,13 @@ function buscaUsuario($conexao, $email, $senha){
     $resultado = mysqli_query($conexao, $query);
     $usuarios = mysqli_fetch_assoc($resultado);
     return $usuarios;   
+}
+
+// CADASTRA MORADOR
+function cadastraMorador ($conexao, $nomeCompleto, $idade, $telefone) {
+    $query = "INSERT INTO 
+                moradores (nome_completo, idade, telefone)
+            VALUES
+                ('{$nomeCompleto}', '{$idade}', '{$telefone}')";
+    return mysqli_query($conexao, $query); 
 }
